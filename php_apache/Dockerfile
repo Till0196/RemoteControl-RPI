@@ -9,4 +9,6 @@ RUN usermod apache -u 48
 RUN cp /usr/lib/apache2/mod_php7.so /usr/local/apache2/modules/
 RUN cp /etc/apache2/conf.d/php7-module.conf /usr/local/apache2/conf/extra/
 
+ADD httpd.conf /usr/local/apache2/conf/httpd.conf
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
