@@ -78,7 +78,7 @@ Result json object
 
 ### Enable automatic startup
 - 1. ```restart: always``` in ```docker-compose.yml```
-- 2. In ```corontab -e```, write ```@reboot /usr/local/bin/docker-compose -f /home/pi/RemoteControl-RPI/docker-compose.yml up -d```
+- 2. In ```crontab -e```, write ```@reboot /usr/local/bin/docker-compose -f /home/pi/RemoteControl-RPI/docker-compose.yml up -d```
 #### Note
 ```restart: always``` only does not start pigpod, so it was necessary to start Docker-compose with crontab.
 ```/home/pi/RemoteControl-RPI/docker-compose.yml``` This command is valid only when RemoteControl-RPI is in the home directory.
