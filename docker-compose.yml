@@ -12,7 +12,7 @@ services:
             - ./remote/script:/remote/script
         ports:
             - "2222:22"
-            - "8000:8888"
+            - "8888:8888"
         cap_add:
             - SYS_RAWIO
         privileged: true
@@ -21,7 +21,7 @@ services:
             - /dev/mem
             - /dev/vcio
             - /dev/ttyAMA0
-        command: sh -c "pigpiod && python3.5 /remote/script/RemoteCodeReciever.py"
+        command: sh -c "/usr/local/bin/pigpiod -l -n 127.0.0.1 && python3.5 /remote/script/RemoteCodeReciever.py"
     httpdphp:
         build: ./php_apache
         container_name: httpdphp
